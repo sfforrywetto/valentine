@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Jersey+25&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Love</title>
+  </head>
+  <body>
+    <div>
+      <h1>Алиша, </h1> 
+      <h1>Я ТЕБЯ</h1>
+      <h1>ЛЮБЛЮ !!!!</h1>
+      <div class="image-container">
+        <img src="/ahahhaahh2.jpg" width="150" height="auto"  alt="funny" class="image">
+        <img src="/1.jpg" alt="funny 2" width="150" height="auto" class="image">
+        <img src="/2.jpg" alt="funny 3" width="150" height="auto" class="image">
+        <img src="/3.jpg" alt="funny 4" width="150" height="auto" class="image">
+      </div>
+    </div>
+    <canvas id="bg"></canvas>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      const container = document.querySelector(".image-container");
+      let expanded = false;
+
+      container.addEventListener("click", function() {
+      let images = document.querySelectorAll(".image");
+
+      images.forEach((img, index) => {
+        if (!expanded) {
+          img.style.transform = `translate(${(index - 1.5) * 120}px, ${(index - 1.5) * 50}px) rotate(${(index - 1.5) * 15}deg)`;
+          img.style.opacity = "1";
+        } else {
+          img.style.transform = "translate(0,0) rotate(0deg)";
+        }
+      });
+      
+        expanded = !expanded;
+      });
+
+      
+    </script>
+  </body>
+</html>
